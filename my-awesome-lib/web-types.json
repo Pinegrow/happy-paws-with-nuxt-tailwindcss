@@ -1,0 +1,142 @@
+{
+  "$schema": "http://json.schemastore.org/web-types",
+  "name": "my-awesome-lib",
+  "framework": "vue",
+  "version": "3.8.11",
+  "contributions": {
+    "html": {
+      "elements": [
+        {
+          "name": "MyIcon",
+          "attributes": [
+            {
+              "name": "name",
+              "customType": "icon",
+              "placeholder": "i-line-md-iconify1"
+            },
+            {
+              "name": "size",
+              "customType": "select",
+              "default": "24px",
+              "options": [
+                "12px",
+                "16px",
+                "20px",
+                "24px",
+                "28px",
+                "32px",
+                "36px"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MyAvatar",
+          "attributes": [
+            {
+              "name": "size",
+              "customType": "select",
+              "default": "sm",
+              "options": [
+                "3xs",
+                "2xs",
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+                "2xl",
+                "3xl"
+              ]
+            },
+            {
+              "name": "chipPosition",
+              "customType": "select",
+              "default": "top-right",
+              "options": [
+                "top-right",
+                "bottom-right",
+                "top-left",
+                "bottom-left"
+              ]
+            },
+            {
+              "name": "chipVariant",
+              "customType": "select",
+              "default": "solid",
+              "options": ["solid"]
+            }
+          ]
+        },
+        {
+          "name": "MyButton",
+          "attributes": [
+            {
+              "name": "label",
+              "placeholder": "My Button"
+            },
+            {
+              "name": "size",
+              "customType": "select",
+              "default": "sm",
+              "options": ["2xs", "xs", "sm", "md", "lg", "xl"]
+            },
+            {
+              "name": "variant",
+              "customType": "select",
+              "default": "solid",
+              "options": ["solid", "outline", "soft", "ghost", "link"]
+            },
+            {
+              "name": "target",
+              "customType": "select",
+              "default": "",
+              "options": ["_blank"]
+            }
+          ],
+          "slots": [
+            {
+              "name": "default",
+              "description": "The default Vue slot.",
+              "vue-properties": [
+                {
+                  "name": "disabled-demo",
+                  "description": "Whether or not the Button is disabled. Note, this is not a real slot prop, added here just to show an example of how it is defined in web-types.",
+                  "type": "Boolean"
+                }
+              ]
+            },
+            {
+              "name": "leading",
+              "description": "Use the #leading slot to set the content of the leading icon."
+            },
+            {
+              "name": "trailing",
+              "description": "Use the #trailing slot to set the content of the trailing icon."
+            }
+          ]
+        },
+        {
+          "name": "MyTooltip",
+          "attributes": []
+        }
+      ],
+      "attributes": [
+        {
+          "name": "color-demo",
+          "description": "Note, this is not a global prop, added here just to show an example of how it is defined in web-types.",
+          "customType": "select",
+          "options": [
+            "primary",
+            "secondary",
+            "tertiary",
+            "success",
+            "warning",
+            "error",
+            "info"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "happy-paws-with-nuxt-tailwindcss",
+  "version": "0.0.0",
+  "homepage": "https://happy-paws-with-nuxt-tailwindcss.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pinegrow/happy-paws-with-nuxt-tailwindcss.git"
+  },
+  "scripts": {
+    "dev": "nuxt dev",
+    "now": "npm run build && npm run preview",
+    "lighthouse:dev": "npx unlighthouse --no-cache --site http://localhost:3000",
+    "lighthouse": "npx unlighthouse --no-cache --site https://happy-paws-with-nuxt-tailwindcss.netlify.app",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "analyze": "nuxt analyze",
+    "vue-devtools": "vue-devtools",
+    "lint": "npm run lint:fix && npm run format",
+    "lint:fix": "eslint --fix --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts ./ --ignore-path .gitignore",
+    "format": "prettier --write \"**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts,html,css,md,mdx,json}\" !public --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.11",
+    "@vee-validate/nuxt": "^4.11.6",
+    "@vueuse/core": "^10.4.1",
+    "lite-youtube-embed": "^0.2.0",
+    "pinia": "^2.1.6"
+  },
+  "devDependencies": {
+    "@iconify/json": "^2.2.96",
+    "@nuxt/content": "^2.8.2",
+    "@nuxt/devtools": "^0.7.1",
+    "@nuxt/eslint-config": "^0.1.1",
+    "@nuxt/image": "^1.0.0",
+    "@nuxtjs/critters": "^0.5.1",
+    "@nuxtjs/fontaine": "^0.4.1",
+    "@nuxtjs/html-validator": "^1.5.2",
+    "@nuxtseo/module": "^2.0.0-beta.39",
+    "@pinegrow/nuxt-module": "^3.0.52",
+    "@pinegrow/tailwindcss-plugin": "^3.0.18",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/node": "^20.5.0",
+    "@unocss/nuxt": "^0.54.1",
+    "@unocss/preset-icons": "^0.54.1",
+    "@vue/devtools": "^6.5.0",
+    "@vueuse/nuxt": "^10.4.1",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "npm-run-all": "^4.1.5",
+    "nuxt": "^3.7.3",
+    "nuxt-icon": "^0.6.1",
+    "postcss": "^8.4.22",
+    "prettier": "^2.8.4",
+    "rehype-external-links": "^3.0.0",
+    "tailwindcss": "^3.3.1",
+    "typescript": "^5.0.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "nuxi": "3.8.4"
+    }
+  },
+  "overrides": {
+    "nuxi": "3.8.4"
+  },
+  "web-types": "web-types.json"
+}
