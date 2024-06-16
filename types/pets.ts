@@ -1,4 +1,4 @@
-import type { ImageOptimized } from './image'
+import type { ImageOptimized } from '~~/types/image'
 
 export type Pet = {
   id: number
