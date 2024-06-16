@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import site from '@/site'
+  import site from '~~/site'
   const { name, logo } = site
 </script>
 <template>

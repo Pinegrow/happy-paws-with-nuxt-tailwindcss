@@ -1,5 +1,5 @@
-import type { Pets } from '@/types/pets'
-import { pets as allPets } from '@/db.json'
+import type { Pets } from '~~/types/pets'
+import { pets as allPets } from '~~/db.json'
 
 allPets as Pets
 

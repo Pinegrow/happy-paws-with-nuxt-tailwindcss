@@ -3,7 +3,7 @@
   import type { Script } from '@unhead/schema'
   type TurboScript = Script & { once: true }
 
-  import site from '@/site'
+  import site from '~~/site'
   // import image from '@/screenshots/image.jpg'
   import { fontUrls } from '@/utils/font'
 

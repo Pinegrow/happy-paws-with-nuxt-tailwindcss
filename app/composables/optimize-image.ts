@@ -1,4 +1,4 @@
-import type { ImageOptions, ImageOptimized } from '@/types/image'
+import type { ImageOptions, ImageOptimized } from '~~/types/image'
 
 export const useOptimizeImage = () => {
   const img = useImage()

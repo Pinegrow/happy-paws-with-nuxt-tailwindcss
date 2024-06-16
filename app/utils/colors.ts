@@ -1,7 +1,7 @@
 // Safelisting of color classes for dynamic usage is inpsired by https://ui.nuxt.com/getting-started/theming#colors. The safelisting can be further optimized and automated to extract based on usage at a component level. For details, refer to Smart Safelisting introduced in https://github.com/nuxt/ui/pull/268 & https://github.com/nuxt/ui/blob/dev/src/colors.ts
 
 import colors from 'tailwindcss/colors'
-import { pg_colors } from '../themes/pg-tailwindcss/tokens.mjs'
+import { pg_colors } from '../../themes/pg-tailwindcss/tokens.mjs'
 
 import { omit, kebabCase } from './index'
 

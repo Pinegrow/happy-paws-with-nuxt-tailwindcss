@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import site from '@/site'
+  import site from '~~/site'
   import { heroImageUrl } from '@/utils/hero'
   import { primary, secondary } from '@/utils/colors'
   // import { useSiteConfig } from '#imports'
