@@ -1,4 +1,4 @@
-// import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath, URL } from 'node:url'
 import presetIcons from '@unocss/preset-icons'
 
 import site from './site'
@@ -22,7 +22,11 @@ export default defineNuxtConfig({
 
   // Preparation for Nuxt 4 migration
   srcDir: 'app',
-  serverDir: 'server',
+  serverDir: fileURLToPath(new URL('server', import.meta.url)),
+  dir: {
+    public: fileURLToPath(new URL('public', import.meta.url)),
+    modules: fileURLToPath(new URL('modules', import.meta.url)),
+  },
 
   experimental: {
     componentIslands: true,
