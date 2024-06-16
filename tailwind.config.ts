@@ -4,8 +4,8 @@ import {
   pg_backgrounds,
 } from './themes/pg-tailwindcss/tokens.mjs'
 
-import { getFontsWithFallback } from './app/utils/font.js'
-import { safelist } from './app/utils/colors.js'
+import { getFontsWithFallback } from './app/utils/font'
+import { safelist } from './app/utils/colors'
 
 export default {
   darkMode: 'class',

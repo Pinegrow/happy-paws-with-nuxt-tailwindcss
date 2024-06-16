@@ -1,5 +1,5 @@
 import { $fetch } from 'ofetch'
-import type { Article, Articles, State } from '@/types'
+import type { Article, Articles, State } from '~~/types'
 
 // const apiBaseUrl = 'http://localhost:3001'
 const apiBaseUrl = 'https://dev.to/api'
