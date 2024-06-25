@@ -48,6 +48,7 @@ export default defineNuxtConfig({
 
   modules: [
     '@pinegrow/nuxt-module',
+    '@nuxtjs/tailwindcss',
     '@unocss/nuxt',
     '@nuxt/devtools',
     '@nuxt/content',
@@ -76,18 +77,21 @@ export default defineNuxtConfig({
     },
   },
 
+  tailwindcss: {
+    // Default Options
+    cssPath: ['@/assets/css/tailwind.css', { injectPosition: 'first' }],
+    configPath: 'tailwind.config',
+    exposeConfig: {
+      level: 2,
+    },
+    config: {},
+    viewer: true,
+  },
+
   css: [
     '@/assets/css/tailwind.css',
     // 'lite-youtube-embed/src/lite-yt-embed.css',
   ],
-
-  postcss: {
-    plugins: {
-      'tailwindcss/nesting': {},
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
 
   vite: {
     vue: {
@@ -307,7 +311,7 @@ export default defineNuxtConfig({
         cssPath: '@/assets/css/tailwind.css',
         // themePath: false, // Set to false so that Design Panel is not used
         // restartOnConfigUpdate: true,
-        restartOnThemeUpdate: true,
+        // restartOnThemeUpdate: true,
       },
       // plugins: [
       //   {

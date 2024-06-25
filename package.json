@@ -42,6 +42,7 @@
     "@nuxtjs/fontaine": "^0.4.3",
     "@nuxtjs/html-validator": "^1.8.2",
     "@nuxtjs/seo": "^2.0.0-rc.11",
+    "@nuxtjs/tailwindcss": "^6.12.0",
     "@pinegrow/nuxt-module": "^3.0.56",
     "@pinegrow/tailwindcss-plugin": "^3.0.20",
     "@tailwindcss/forms": "^0.5.7",
@@ -51,14 +52,11 @@
     "@unocss/preset-icons": "^0.61.0",
     "@vue/devtools": "^6.6.3",
     "@vueuse/nuxt": "^10.11.0",
-    "autoprefixer": "^10.4.19",
     "eslint": "^9.5.0",
     "eslint-config-prettier": "^9.1.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.38",
     "prettier": "^3.3.2",
     "rehype-external-links": "^3.0.0",
-    "tailwindcss": "^3.4.4",
     "typescript": "^5.5.2"
   },
   "pnpm": {
