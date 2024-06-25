@@ -19,7 +19,7 @@
   const is404 = computed(
     () => props.error?.statusCode === 404 || message.value?.includes('404'),
   )
-  const isDev = process.dev
+  const isDev = import.meta.dev
 
   function handleError() {
     return clearError({ redirect: '/' })

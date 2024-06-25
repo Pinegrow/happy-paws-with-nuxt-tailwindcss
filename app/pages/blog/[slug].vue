@@ -65,10 +65,7 @@
               class="hidden pl-8 pr-4 py-4 rounded-xl xl:block xl:sticky xl:top-28 bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100"
             >
               <TheAuthor v-bind="author" />
-              <TableOfContents
-                :post="post"
-                class="hidden xl:block"
-              ></TableOfContents>
+              <TableOfContents :post="post" class="hidden xl:block" />
             </div>
             <div
               class="dark:divide-gray-700 divide-gray-200 divide-y xl:col-span-3 xl:pb-0 xl:row-span-2"

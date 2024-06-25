@@ -49,10 +49,10 @@
               <BaseIcon
                 name="i-material-symbols-mark-email-unread-outline"
                 height="28px"
-              ></BaseIcon>
-              <BaseIcon name="i-logos-whatsapp-icon" height="28px"></BaseIcon>
-              <BaseIcon name="i-logos-facebook" height="28px"></BaseIcon>
-              <BaseIcon name="i-logos-twitter" height="28px"></BaseIcon>
+              />
+              <BaseIcon name="i-logos-whatsapp-icon" height="28px" />
+              <BaseIcon name="i-logos-facebook" height="28px" />
+              <BaseIcon name="i-logos-twitter" height="28px" />
             </div>
           </div>
           <div class="flex flex-wrap pt-8 w-full lg:flex-nowrap">
@@ -87,7 +87,7 @@
                       name="i-material-symbols-add-location-alt-outline-rounded"
                       height="28px"
                       class="-ml-1 font-semibold"
-                    ></BaseIcon>
+                    />
                     <span class="ml-2">{{ location }}</span>
                   </li>
                   <li class="mb-4">
@@ -104,16 +104,12 @@
                     <BaseIcon
                       name="i-material-symbols-check-box-outline"
                       height="28px"
-                    ></BaseIcon
-                    ><span class="inline-block ml-2">Done</span>
+                    /><span class="inline-block ml-2">Done</span>
                   </li>
                   <li
                     class="flex items-center justify-center mt-4 lg:justify-start"
                   >
-                    <BaseIcon
-                      name="i-twemoji-sparkling-heart"
-                      height="24px"
-                    ></BaseIcon>
+                    <BaseIcon name="i-twemoji-sparkling-heart" height="24px" />
                     <span class="ml-2">Health Check</span>
                   </li>
                   <li
@@ -123,13 +119,13 @@
                       name="i-bx-bxs-microchip"
                       height="24px"
                       class="text-tertiary-600 dark:text-tertiary-200"
-                    ></BaseIcon>
+                    />
                     <span class="ml-2">Microchipped</span>
                   </li>
                   <li
                     class="flex items-center justify-center mt-4 lg:justify-start"
                   >
-                    <BaseIcon name="i-twemoji-worm" height="24px"></BaseIcon>
+                    <BaseIcon name="i-twemoji-worm" height="24px" />
                     <span class="ml-2">De-wormed</span>
                   </li>
                   <li
@@ -139,7 +135,7 @@
                       name="i-healthicons-sexual-reproductive-health-outline"
                       height="24px"
                       class="text-indigo-600"
-                    ></BaseIcon>
+                    />
                     <span class="ml-2">De-sexed</span>
                   </li>
                 </ul>

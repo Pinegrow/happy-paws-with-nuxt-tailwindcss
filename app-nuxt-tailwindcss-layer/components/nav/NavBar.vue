@@ -1,6 +1,7 @@
 <script setup lang="ts">
   const { navlinks, navlinksPrimary, navlinksSecondary, currentPath } = useNav()
 </script>
+
 <template>
   <div class="w-full">
     <nav class>
@@ -39,4 +40,5 @@
     </nav>
   </div>
 </template>
+
 <style scoped></style>

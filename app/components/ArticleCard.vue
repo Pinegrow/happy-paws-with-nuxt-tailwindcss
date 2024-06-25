@@ -50,13 +50,12 @@
                 :key="index"
                 :label="tag"
                 color="secondary"
-              >
-              </BaseButton>
+              />
             </div>
             <div
               class="dark:prose-invert dark:prose-neutral-100 prose prose-neutral-800 md:max-w-none lg:prose-lg"
             >
-              <p v-html="article.body_html"></p>
+              <p v-html="article.body_html" />
             </div>
           </div>
         </div>

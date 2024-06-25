@@ -1,6 +1,7 @@
 <script setup lang="ts">
   const { isMobileMenuOpen, openMobileMenu } = useMobileMenu()
 </script>
+
 <template>
   <BaseButton
     size="xl"
@@ -13,4 +14,5 @@
     <span class="sr-only">Open main menu</span>
   </BaseButton>
 </template>
+
 <style scoped></style>

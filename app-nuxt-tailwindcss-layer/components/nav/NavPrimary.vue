@@ -12,6 +12,7 @@
     },
   })
 </script>
+
 <template>
   <div class="h-full items-center">
     <div class="flex h-full space-x-2">
@@ -23,8 +24,7 @@
         size="lg"
         :variant="isCurrentRoute(navlink, currentPath) ? 'solid' : 'ghost'"
         class="!rounded-lg"
-      >
-      </BaseButton>
+      />
     </div>
     <BaseButton
       class="ml-3"
@@ -32,11 +32,13 @@
       to="https://vuedesigner.com"
       size="xl"
       color="secondary"
-      ><span class="pl-2">Try Now</span>
+    >
+      <span class="pl-2">Try Now</span>
       <template #trailing>
-        <BaseIcon name="i-mdi-pine-tree" height="24px"></BaseIcon>
+        <BaseIcon name="i-mdi-pine-tree" height="24px" />
       </template>
     </BaseButton>
   </div>
 </template>
+
 <style scoped></style>

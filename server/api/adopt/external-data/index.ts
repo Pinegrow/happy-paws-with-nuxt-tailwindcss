@@ -1,7 +1,7 @@
 import type { Pets } from '~~/types/pets'
 
-export let allPets: Pets
-export let somePets: Pets
+let allPets: Pets
+let somePets: Pets
 
 const apiBaseUrl =
   'https://my-json-server.typicode.com/pinegrow/happy-paws-with-nuxt-tailwindcss'

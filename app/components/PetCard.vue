@@ -32,7 +32,7 @@
           name="i-ri-heart-add-fill"
           height="20px"
           class="!text-tertiary-600 md:ml-1.5"
-        ></BaseIcon>
+        />
       </BaseButton>
     </div>
   </NuxtLink>

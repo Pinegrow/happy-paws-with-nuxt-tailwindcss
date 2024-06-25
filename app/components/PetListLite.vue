@@ -25,11 +25,7 @@
           </div>
         </div>
         <div class="flex flex-wrap -mx-4 justify-center">
-          <PetCard
-            v-for="(pet, index) in pets"
-            :key="index"
-            v-bind="pet"
-          ></PetCard>
+          <PetCard v-for="(pet, index) in pets" :key="index" v-bind="pet" />
         </div>
       </div>
     </div>

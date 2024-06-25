@@ -5,10 +5,6 @@
   // import { useSiteConfig } from '#imports'
   // const siteConfig = useSiteConfig()
 
-  // When building as a SSG (generate command) app, defineRobotMeta is used to create a meta tag to control indexing. For more details - https://nuxtseo.com/robots/guides/meta-tags
-  // TODO: Remove below defineRobotMeta if building as a SSR (build command) app
-  defineRobotMeta()
-
   const { name, logo, description, author, twitter } = site
   const fromBg = secondary
   const toBg = primary
@@ -66,6 +62,7 @@
   <div>
     <HeadAndMeta />
     <!-- We pass image separately so that alias can be transformed by vue plugin, see vite.vue.template.transformAssetUrls in nuxt.config.ts -->
+    <!-- OG images and nuxtseo features can be previewed with nuxt-devtools during development. OG images can also be viewed using URL in this form - `/__og-image__/image/<path>/og.<extension>. For eg, https://happy-paws-with-nuxt-tailwindcss.netlify.app/__og-image__/image/og.png -->
     <OgImage :image="theOgImage" v-bind="ogImageOptions" />
     <NuxtLoadingIndicator />
     <NuxtLayout>

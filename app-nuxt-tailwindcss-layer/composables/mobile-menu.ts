@@ -1,4 +1,5 @@
 import { ref } from 'vue'
+
 const isMobileMenuOpen = ref(false)
 const isSecondaryMenuOpen = ref(false)
 

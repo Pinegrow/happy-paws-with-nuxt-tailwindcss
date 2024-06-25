@@ -75,7 +75,7 @@
                 stroke="#475f17"
                 stroke-miterlimit="10"
                 stroke-width="12"
-              ></path>
+              />
               <circle
                 cx="17.18"
                 cy="17.18"
@@ -85,7 +85,7 @@
                 stroke="#475f17"
                 stroke-miterlimit="10"
                 stroke-width="12"
-              ></circle>
+              />
               <circle
                 cx="17.18"
                 cy="17.18"
@@ -95,7 +95,7 @@
                 stroke="#475f17"
                 stroke-miterlimit="10"
                 stroke-width="12"
-              ></circle>
+              />
               <circle
                 cx="17.18"
                 cy="17.18"
@@ -105,7 +105,7 @@
                 stroke="#475f17"
                 stroke-miterlimit="10"
                 stroke-width="12"
-              ></circle>
+              />
               <circle
                 cx="17.18"
                 cy="17.18"
@@ -115,25 +115,25 @@
                 stroke="#475f17"
                 stroke-miterlimit="10"
                 stroke-width="12"
-              ></circle>
+              />
               <circle
                 cx="3.19"
                 cy="3.19"
                 r="3.19"
                 transform="translate(101.16 179.05)"
                 fill="#475f17"
-              ></circle>
+              />
               <path
                 d="M89.72 137a20.84 20.84 0 00-20.84 20.84v.16"
                 fill="none"
                 stroke="#475f17"
                 stroke-miterlimit="10"
                 stroke-width="12"
-              ></path>
+              />
               <path
                 d="M15.7 47.82h-2.75v-2.76a3.4 3.4 0 00-6.79 0v2.76H3.4a3.4 3.4 0 000 6.79h2.75v2.76a3.4 3.4 0 006.79 0v-2.76h2.76a3.4 3.4 0 000-6.79zm172.43 9.55h-2.76v-2.76a3.4 3.4 0 00-6.79 0v2.76h-2.76a3.4 3.4 0 000 6.79h2.76v2.76a3.4 3.4 0 006.79 0v-2.76h2.76a3.4 3.4 0 000-6.79zM25.25 203.82H22.5v-2.76a3.4 3.4 0 00-6.79 0v2.76h-2.76a3.4 3.4 0 000 6.79h2.75v2.76a3.4 3.4 0 006.79 0v-2.76h2.76a3.4 3.4 0 000-6.79z"
                 fill="#475f17"
-              ></path>
+              />
             </g>
           </svg>
 

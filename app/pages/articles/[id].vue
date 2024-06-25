@@ -31,9 +31,7 @@
 </script>
 <template>
   <div>
-    <ArticleCardHeader
-      :cover="article.cover_image || article.social_image"
-    ></ArticleCardHeader>
+    <ArticleCardHeader :cover="article.cover_image || article.social_image" />
     <ArticleCard :article="article" />
   </div>
 </template>

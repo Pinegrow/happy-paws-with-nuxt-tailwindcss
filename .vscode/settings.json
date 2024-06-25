@@ -1,10 +1,20 @@
 {
+  // https://nuxt.com/blog/eslint-module
+  // Enable the ESlint flat config support
+  "eslint.experimental.useFlatConfig": true,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "never",
     "source.fixAll.eslint": "explicit"
   },
-  "eslint.validate": ["javascript", "javascriptreact", "vue"],
+
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+
   "typescript.tsdk": "node_modules/typescript/lib",
   "search.exclude": {
     "**/_pgbackup": true,

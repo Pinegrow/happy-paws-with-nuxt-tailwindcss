@@ -40,6 +40,6 @@
   })
 </script>
 <template>
-  <component :is="tag" :class="name" :style="iconStyle"> </component>
+  <component :is="tag" :class="name" :style="iconStyle" />
 </template>
 <style scoped></style>

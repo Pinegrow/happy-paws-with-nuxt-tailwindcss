@@ -19,6 +19,8 @@
   const articleLink = computed(() => {
     if (props.article) {
       return `/articles/${props.article.id}`
+    } else {
+      return ''
     }
   })
 </script>
