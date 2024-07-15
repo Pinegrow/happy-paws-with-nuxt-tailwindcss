@@ -1,6 +1,7 @@
 import { fileURLToPath, URL } from 'node:url'
 import { resolve } from 'pathe'
 import presetIcons from '@unocss/preset-icons'
+import { bundledLanguages } from 'shiki'
 
 import site from './site'
 const {
@@ -175,23 +176,8 @@ export default defineNuxtConfig({
       ],
     },
     highlight: {
-      langs: [
-        'js',
-        'jsx',
-        'json',
-        'ts',
-        'tsx',
-        'vue',
-        'css',
-        'html',
-        'vue',
-        'shell',
-        'bash',
-        'md',
-        'mdc',
-        'yaml',
-        'diff',
-      ],
+      //@ts-ignore
+      langs: Object.keys(bundledLanguages),
       theme: 'dracula-soft',
     },
   },
