@@ -28,9 +28,7 @@
     "@vueuse/core": "^10.11.0",
     "lite-youtube-embed": "^0.3.2",
     "nuxt": "^3.12.2",
-    "pinia": "^2.1.7",
-    "vue": "^3.4.30",
-    "vue-router": "^4.4.0"
+    "pinia": "^2.1.7"
   },
   "devDependencies": {
     "@iconify/json": "^2.2.222",
@@ -41,9 +39,9 @@
     "@nuxtjs/critters": "^0.7.1",
     "@nuxtjs/fontaine": "^0.4.3",
     "@nuxtjs/html-validator": "^1.8.2",
-    "@nuxtjs/seo": "^2.0.0-rc.11",
+    "@nuxtjs/seo": "^2.0.0-rc.12",
     "@pinegrow/nuxt-module": "^3.0.60",
-    "@pinegrow/tailwindcss-plugin": "^3.0.23",
+    "@pinegrow/tailwindcss-plugin": "^3.0.29",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^20.14.8",

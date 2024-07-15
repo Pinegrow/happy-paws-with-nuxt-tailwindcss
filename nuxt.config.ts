@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     './app-nuxt-tailwindcss-layer', // NavBar and Footer components
   ],
   // ssr: false,
-  devtools: { enabled: false }, // Disable when using Vue devtools
+  // devtools: { enabled: false }, // enabled by default, disable when using standalone Vue devtools when using standalone Vue devtools
 
   // Preparation for Nuxt 4 migration
   future: {
@@ -49,7 +49,6 @@ export default defineNuxtConfig({
   modules: [
     '@pinegrow/nuxt-module',
     '@unocss/nuxt',
-    '@nuxt/devtools',
     '@nuxt/content',
     '@vueuse/nuxt',
     '@pinia/nuxt',
