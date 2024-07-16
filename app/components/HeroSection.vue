@@ -1,37 +1,14 @@
 <script setup lang="ts">
   import { heroImageUrl } from '@/utils/hero'
 
-  const { optimizeImage } = useOptimizeImage()
-  const heroImageOptimized = {
-    alt: `hero`,
-    cover: true,
-    ...optimizeImage(
-      heroImageUrl,
-      /* options */
-      {
-        /* If using local images instead of unsplash url, enable netlify provider */
-        // provider:
-        //     process.env.NODE_ENV === 'production'
-        //       ? 'netlify'
-        //       : null /* defaults to ipx or ipxStatic */,
-        placeholder: false, // placeholder image before the actual image is fully loaded.
-      },
-      true /* return bgStyles */,
-    ),
-  }
-
-  const heroImage = heroImageOptimized.src
-  const bgStyles = heroImageOptimized.bgStyles
+  const heroCaption = 'Adopt A Pet'
+  const heroTitle = 'Thousands of homeless dogs, one act of kindness'
+  const heroDescription =
+    'Find your new furry friend today! We have a wide variety of lovable pets available for adoption. Come visit us and take home your new best friend!'
 </script>
 <template>
   <section class="container mx-auto pb-12 px-4">
-    <div
-      class="bg-center bg-cover bg-no-repeat blur-none rounded-3xl z-0"
-      :style="bgStyles"
-    >
-      <!-- <div
-      class="bg-center bg-cover bg-no-repeat blur-none rounded-3xl z-0 bg-design-image lg:bg-design-image-large"
-    > -->
+    <BackgroundImageWrapper :image-url="heroImageUrl" class="rounded-3xl">
       <div class>
         <div class="lg:px-12 md:py-36 pb-6 pt-72 px-6 relative rounded-3xl">
           <div
@@ -64,7 +41,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </BackgroundImageWrapper>
   </section>
 </template>
 <style scoped></style>

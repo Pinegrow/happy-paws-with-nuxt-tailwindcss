@@ -25,17 +25,20 @@ export const useOptimizeImage = () => {
 
     const resolvedImage = img.getImage(src, {
       ...options,
+      provider: 'ipx',
     })
 
     const placeholderImage =
       placeholder &&
       img.getImage(src, {
         ...options,
+        provider: 'ipx',
         placeholder,
       })
 
     const imageSizes = img.getSizes(src, {
       ...options,
+      provider: 'ipx',
       sizes,
     })
 
