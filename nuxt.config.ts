@@ -40,7 +40,7 @@ export default defineNuxtConfig({
   },
 
   app: {
-    baseURL: '/', // defaulted by nuxt
+    // baseURL: '/', // defaulted by nuxt to config.app.baseURL
     // Look into HeadAndMeta.vue for the rest
     head: {
       meta: [{ charset: 'utf-8' }], // defaulted by nuxt
@@ -106,6 +106,7 @@ export default defineNuxtConfig({
     //   '2xl': 1536,
     // },
     provider: 'ipx',
+
     presets: {
       avatar: {
         modifiers: {
