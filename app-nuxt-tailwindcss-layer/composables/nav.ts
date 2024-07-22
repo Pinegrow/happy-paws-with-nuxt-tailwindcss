@@ -12,7 +12,7 @@ export const useNav = () => {
       (route) => route.name && route.name[0] !== route.name[0].toUpperCase(),
     )
     // Remove dynamic routes
-    // .filter((route) => !route.path.includes(':'))
+    .filter((route) => !route.path.includes(':'))
     // Include only ones that has a title (which are defined via definePageMeta in pages)
     .filter((route) => route.meta.title)
     .filter((route) => route.path !== '/try-now')
