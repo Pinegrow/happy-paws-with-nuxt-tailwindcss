@@ -14,9 +14,9 @@
     // ogImage: 'images/ogImage.png', // url or local images inside public folder, for eg, ~/public/images/ogImage.png
   })
 
-  const articleId = useRoute().params.id
+  const articleId = useRoute().params.id.toString()
 
-  const { data: article } = await useAsyncData('articles', async () => {
+  const { data: article } = await useAsyncData(articleId, async () => {
     const { getArticle } = useArticles()
     return await getArticle(+articleId)
   })

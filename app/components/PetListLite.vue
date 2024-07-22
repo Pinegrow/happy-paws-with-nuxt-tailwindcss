@@ -19,12 +19,12 @@
             </p>
           </div>
           <div class="px-4 text-center w-full">
-            <BaseButton size="xl" to="/adopt" color="secondary"
-              ><span>Meet Them All ></span>
+            <BaseButton size="xl" to="/adopt" color="secondary">
+              <span>Meet Them All ></span>
             </BaseButton>
           </div>
         </div>
-        <div class="flex flex-wrap -mx-4 justify-center">
+        <div class="-mx-4 flex flex-wrap justify-center">
           <PetCard v-for="(pet, index) in pets" :key="index" v-bind="pet" />
         </div>
       </div>

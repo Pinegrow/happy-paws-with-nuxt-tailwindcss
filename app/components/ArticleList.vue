@@ -4,7 +4,7 @@
   const { data: articles, refresh } = await useAsyncData(
     'articles',
     async () => {
-      const { listArticles } = await useArticles()
+      const { listArticles } = useArticles()
       return listArticles()
     },
   )

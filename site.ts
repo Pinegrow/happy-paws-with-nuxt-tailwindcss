@@ -20,7 +20,7 @@ export default {
     { text: 'Home', link: '/', type: 'primary', icon: 'i-mdi-home' },
     { text: 'Adopt Now', link: '/adopt', type: 'primary', icon: 'i-mdi-home' },
     {
-      text: 'Donate',
+      text: 'Quick Start',
       link: '/quick-start',
       type: 'secondary',
       icon: 'i-mdi-home',

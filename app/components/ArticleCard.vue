@@ -7,7 +7,7 @@
   })
 </script>
 <template>
-  <section v-if="article" class="py-8">
+  <section class="py-8">
     <div class="container justify-center mx-auto px-4 relative">
       <div class="-mt-36 p-4 rounded-lg bg-neutral-50 dark:bg-neutral-900">
         <div class="flex flex-col h-full rounded-lg">

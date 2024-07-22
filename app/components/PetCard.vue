@@ -5,7 +5,7 @@
 <template>
   <NuxtLink class="w-full md:w-6/12 lg:w-4/12 xl:w-3/12" :to="`/adopt/${id}`">
     <div
-      class="m-3 text-neutral-900 dark:text-neutral-100 bg-neutral-50 dark:bg-neutral-900 px-6 py-12 rounded-3xl shadow-xl text-center"
+      class="bg-neutral-50 m-3 px-6 py-12 rounded-3xl shadow-xl text-center text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100"
     >
       <!-- <img
         class="mb-4 mx-auto rounded-xl w-full sm:w-9/12"
@@ -13,7 +13,7 @@
         :src="image"
       /> -->
       <NuxtImg
-        class="mb-4 mx-auto rounded-xl w-full sm:w-9/12"
+        class="h-60 mb-4 mx-auto object-cover rounded-xl w-full sm:w-9/12"
         :alt="name"
         :src="image"
       />
@@ -26,8 +26,8 @@
       <p class="mb-6 text-secondary-600 dark:text-secondary-200 text-sm">
         {{ breed }}
       </p>
-      <BaseButton size="lg"
-        ><span>Adopt Now</span>
+      <BaseButton size="lg">
+        <span>Adopt Now</span>
         <BaseIcon
           name="i-ri-heart-add-fill"
           height="20px"

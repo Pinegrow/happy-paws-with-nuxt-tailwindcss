@@ -1,3 +1,5 @@
+import { removeUrlParamsAndHash } from '@/utils/url'
+
 export const usePet = async (petId: number) => {
   // const { data: pet, error } = await useFetch(`/api/adopt/external-data/${petId}`)
   const { data: pet, error } = await useFetch(`/api/adopt/local-data/${petId}`)
@@ -15,16 +17,10 @@ export const usePet = async (petId: number) => {
   }
 
   const fetchPet = () => {
-    // // Optimize any image urls in the data contents
-    // const { optimizeImage } = useOptimizeImage()
-
-    // return pet.value.image
-    //   ? {
-    //       ...pet.value,
-    //       imageOptimized: optimizeImage(pet.value.image),
-    //     }
-    //   : pet.value
-    return pet.value
+    return {
+      ...pet.value,
+      image: removeUrlParamsAndHash(pet.value.image),
+    }
   }
 
   return { pet, fetchPet }

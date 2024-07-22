@@ -89,17 +89,6 @@ export default defineNuxtConfig({
     },
   },
 
-  vite: {
-    vue: {
-      template: {
-        transformAssetUrls: {
-          NuxtImg: ['src'],
-          OgImage: ['image'],
-        },
-      },
-    },
-  },
-
   image: {
     // dir: 'assets/images', // doesn't always work, for eg, with vercel etc, https://github.com/nuxt/image/issues/1006. Therefore, we are storing the images in public folder, to have them not processed by vite, but rather by nuxt-image module on-demand
     // sizes: 'xs:100vw sm:100vw md:100vw lg:100vw xl:100vw', // Global sizes not yet supported, has to be specified in NuxtImg or NuxtPicture tags - https://github.com/nuxt/image/issues/216
@@ -193,6 +182,10 @@ export default defineNuxtConfig({
   vue: {
     compilerOptions: {
       isCustomElement: (tag) => tag === 'lite-youtube',
+    },
+    transformAssetUrls: {
+      NuxtImg: ['src'],
+      OgImage: ['image'],
     },
   },
 

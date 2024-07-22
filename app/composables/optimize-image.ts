@@ -1,4 +1,5 @@
 import type { ImageOptions, ImageOptimized } from '~~/types/image'
+import { removeUrlParamsAndHash } from '@/utils/url'
 
 export const useOptimizeImage = () => {
   const img = useImage()
@@ -8,6 +9,7 @@ export const useOptimizeImage = () => {
     optionsWithSizes: ImageOptions = {},
     bgStyles = false,
   ): ImageOptimized => {
+    src = removeUrlParamsAndHash(src)
     const {
       sizes = 'xs:100vw sm:100vw md:100vw lg:100vw xl:100vw',
       ...optionsWithPlaceholder
@@ -60,6 +62,7 @@ export const useOptimizeImage = () => {
             .filter(
               (imgUrl) => imgUrl.endsWith('768w') || imgUrl.endsWith('2560w'),
             )
+            .map((imgUrl) => imgUrl.replace(' 768w', '').replace(' 2560w', ''))
         })
 
         const responsiveImageSrc = `url("${responsiveImages.value[0]}")`

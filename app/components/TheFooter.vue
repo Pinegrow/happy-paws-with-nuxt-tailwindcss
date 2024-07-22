@@ -150,9 +150,8 @@
               </NuxtLink>
             </div>
           </div>
-          <div class="my-6 text-center">
+          <div class="my-6 text-center flex flex-col">
             <NuxtLink to="/">+1 234 567-890</NuxtLink>
-            <br />
             <NuxtLink to="/">hello@fantico.com</NuxtLink>
           </div>
         </div>
@@ -248,52 +247,54 @@
           <h2 class="font-bold text-primary-600 dark:text-primary-200 text-xl">
             Gallery
           </h2>
-          <div class="-mx-2 flex flex-wrap items-center lg:mt-2">
-            <div class="p-2 w-1/2 sm:w-4/12">
-              <div class="block hover:opacity-75 overflow-hidden rounded-xl">
+          <div class="-mx-2 flex flex-grow flex-wrap lg:mt-2">
+            <div class="flex p-2 w-1/2 sm:w-4/12">
+              <div
+                class="block h-full overflow-hidden rounded-xl hover:opacity-75"
+              >
                 <NuxtImg
+                  class="h-full object-cover w-full"
                   src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixid=MnwyMDkyMnwwfDF8c2VhcmNofDF8fHBldHxlbnwwfHx8fDE2MzA0NjI1MjM&amp;ixlib=rb-1.2.1q=85&amp;fm=jpg&amp;crop=faces&amp;cs=srgb&amp;w=300&amp;h=250&amp;fit=crop"
-                  class="w-full"
                 />
               </div>
             </div>
-            <div class="p-2 w-1/2 sm:w-4/12">
-              <div class="block hover:opacity-75 overflow-hidden rounded-xl">
+            <div class="flex p-2 w-1/2 sm:w-4/12">
+              <div
+                class="block h-full overflow-hidden rounded-xl hover:opacity-75"
+              >
                 <NuxtImg
+                  class="h-full object-cover w-full"
                   src="https://images.unsplash.com/photo-1491485880348-85d48a9e5312?ixid=MnwyMDkyMnwwfDF8c2VhcmNofDE1fHxjYXR8ZW58MHx8fHwxNjMwNDY3NzE4&amp;ixlib=rb-1.2.1q=85&amp;fm=jpg&amp;crop=faces&amp;cs=srgb&amp;w=300&amp;h=250&amp;fit=crop"
-                  class="w-full"
                 />
               </div>
             </div>
-            <div class="p-2 w-1/2 sm:w-4/12">
-              <div class="block hover:opacity-75 overflow-hidden rounded-xl">
+            <div class="flex p-2 w-1/2 sm:w-4/12">
+              <div
+                class="block h-full overflow-hidden rounded-xl hover:opacity-75"
+              >
                 <NuxtImg
-                  src="https://images.unsplash.com/photo-1591946614720-90a587da4a36?ixid=MnwyMDkyMnwwfDF8c2VhcmNofDIzfHxwZXR8ZW58MHx8fHwxNjMwNDYyNTIz&amp;ixlib=rb-1.2.1q=85&amp;fm=jpg&amp;crop=faces&amp;cs=srgb&amp;w=300&amp;h=250&amp;fit=crop"
-                  class="w-full"
-                />
-              </div>
-            </div>
-            <div class="p-2 w-1/2 sm:w-4/12">
-              <div class="block hover:opacity-75 overflow-hidden rounded-xl">
-                <NuxtImg
+                  class="h-full object-cover w-full"
                   src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?ixid=MnwyMDkyMnwwfDF8c2VhcmNofDI3fHxjYXR8ZW58MHx8fHwxNjMwNDY3NzE4&amp;ixlib=rb-1.2.1q=85&amp;fm=jpg&amp;crop=faces&amp;cs=srgb&amp;w=300&amp;h=250&amp;fit=crop"
-                  class="w-full"
                 />
               </div>
             </div>
-            <div class="p-2 w-1/2 sm:w-4/12">
-              <div class="block hover:opacity-75 overflow-hidden rounded-xl">
+            <div class="flex p-2 w-1/2 sm:w-4/12">
+              <div
+                class="block h-full overflow-hidden rounded-xl hover:opacity-75"
+              >
                 <NuxtImg
+                  class="h-full object-cover w-full"
                   src="https://images.unsplash.com/photo-1524511751214-b0a384dd9afe?ixid=MnwyMDkyMnwwfDF8c2VhcmNofDI4fHxwZXR8ZW58MHx8fHwxNjMwNDYyNTIz&amp;ixlib=rb-1.2.1q=85&amp;fm=jpg&amp;crop=faces&amp;cs=srgb&amp;w=300&amp;h=250&amp;fit=crop"
-                  class="w-full"
                 />
               </div>
             </div>
-            <div class="p-2 w-1/2 sm:w-4/12">
-              <div class="block hover:opacity-75 overflow-hidden rounded-xl">
+            <div class="flex p-2 w-1/2 sm:w-4/12">
+              <div
+                class="block h-full overflow-hidden rounded-xl hover:opacity-75"
+              >
                 <NuxtImg
+                  class="h-full object-cover w-full"
                   src="https://images.unsplash.com/photo-1591561582301-7ce6588cc286?ixid=MnwyMDkyMnwwfDF8c2VhcmNofDMwfHxyYWJiaXR8ZW58MHx8fHwxNjMwNDY3NjUw&amp;ixlib=rb-1.2.1q=85&amp;fm=jpg&amp;crop=faces&amp;cs=srgb&amp;w=300&amp;h=250&amp;fit=crop"
-                  class="w-full"
                 />
               </div>
             </div>

@@ -59,8 +59,12 @@
             <div
               class="flex flex-wrap justify-center text-center w-full lg:flex-nowrap lg:text-left"
             >
-              <div class="w-full">
-                <NuxtImg :src="image" class="rounded-xl w-full" :alt="name" />
+              <div class="h-96 w-full">
+                <NuxtImg
+                  :src="image"
+                  class="h-full object-cover rounded-xl w-full"
+                  :alt="name"
+                />
               </div>
               <div class="py-8 w-full sm:px-16">
                 <ul>
