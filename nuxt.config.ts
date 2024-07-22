@@ -1,5 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
 import { resolve } from 'pathe'
+import { addComponent } from 'nuxt/kit'
 import presetIcons from '@unocss/preset-icons'
 import { bundledLanguages } from 'shiki'
 
@@ -61,6 +62,13 @@ export default defineNuxtConfig({
     '@nuxtjs/critters',
     '@nuxt/icon',
     '@nuxt/eslint',
+    function () {
+      addComponent({
+        name: 'NuxtImg',
+        filePath: '@/components/ImgTag.vue',
+        priority: 100,
+      })
+    },
   ],
   // https://dev.to/jacobandrewsky/improving-performance-of-nuxt-with-fontaine-5dim
   fontMetrics: {
