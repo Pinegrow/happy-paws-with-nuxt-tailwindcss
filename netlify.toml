@@ -4,3 +4,6 @@ publish = "dist"
 
 [build.environment]
 NODE_VERSION = "20.14.0"
+
+[image]
+remote_images = ["https:\/\/images.unsplash.com\/.*"]
