@@ -7,7 +7,7 @@ export default {
   description: 'Adopt Your Fur Mate',
   logo: 'i-noto:cat-face',
   author: 'Pinegrow',
-  url: 'https://generate--happy-paws-with-nuxt-tailwindcss.netlify.app',
+  url: 'https://happy-paws-with-nuxt-tailwindcss.netlify.app',
   github: 'https://github.com/pinegrow/happy-paws-with-nuxt-tailwindcss',
   defaultLocale: 'en', // default
   identity: {
