@@ -106,7 +106,7 @@ export default defineNuxtConfig({
     //   '2xl': 1536,
     // },
 
-    provider: 'ipx',
+    // provider: 'ipx',
     presets: {
       avatar: {
         modifiers: {
