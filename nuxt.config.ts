@@ -106,7 +106,7 @@ export default defineNuxtConfig({
     //   '2xl': 1536,
     // },
 
-    provider: 'netlify',
+    provider: 'ipx',
     presets: {
       avatar: {
         modifiers: {
@@ -116,9 +116,7 @@ export default defineNuxtConfig({
         },
       },
     },
-    netlify: {
-      baseURL: url,
-    },
+
     domains: [
       'images.unsplash.com',
       'fakestoreapi.com',
