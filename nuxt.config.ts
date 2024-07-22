@@ -40,7 +40,7 @@ export default defineNuxtConfig({
   },
 
   app: {
-    // baseURL: '/', // defaulted by nuxt to config.app.baseURL
+    baseURL: '/', // defaulted by nuxt
     // Look into HeadAndMeta.vue for the rest
     head: {
       meta: [{ charset: 'utf-8' }], // defaulted by nuxt
