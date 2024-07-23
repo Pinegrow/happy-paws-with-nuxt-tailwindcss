@@ -1,7 +1,7 @@
 import type { Pets } from '~~/types/pets'
 
-let allPets: Pets
-let somePets: Pets
+export const allPets: Pets = []
+export const somePets: Pets = []
 
 const apiBaseUrl =
   'https://my-json-server.typicode.com/pinegrow/happy-paws-with-nuxt-tailwindcss'
@@ -20,14 +20,15 @@ export default defineEventHandler(async (/*event*/) => {
   // If pets exists, don't refetch them
   // Remove this if we want to always fetch refresh data from the source
 
-  if (allPets) {
+  if (allPets.length) {
     return {
       allPets,
       somePets,
     }
   }
 
-  allPets = await $fetch(`${apiBaseUrl}/pets`)
+  const _allPets: [] = await $fetch(`${apiBaseUrl}/pets`)
+  allPets.push(..._allPets)
 
   if (!allPets) {
     throw createError({
@@ -36,7 +37,8 @@ export default defineEventHandler(async (/*event*/) => {
     })
   }
 
-  somePets = fractionOfThePetsArray(allPets, 0.5)
+  const _somePets: [] = fractionOfThePetsArray(allPets, 0.5)
+  somePets.push(..._somePets)
 
   return {
     allPets,

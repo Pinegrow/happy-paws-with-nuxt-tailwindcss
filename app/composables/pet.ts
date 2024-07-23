@@ -1,5 +1,7 @@
 export const usePet = async (petId: number) => {
-  // const { data: pet, error } = await useFetch(`/api/adopt/external-data/${petId}`)
+  // const { data: pet, error } = await useFetch(
+  //   `/api/adopt/external-data/${petId}`,
+  // )
   const { data: pet, error } = await useFetch(`/api/adopt/local-data/${petId}`)
 
   /* The above useFetch is a syntactic sugar of the below useAsyncData & $fetch combo */

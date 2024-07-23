@@ -1,5 +1,5 @@
 import type { Pet, Pets } from '~~/types/pets'
-import { pets } from '~~/db.json'
+import { allPets as pets } from './index'
 pets as Pets
 
 const apiBaseUrl =

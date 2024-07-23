@@ -46,12 +46,7 @@
           height: 600,
           fit: 'fill', // can be cover, contain, fill, inside, outside
         },
-        /* If using local images instead of unsplash url, enable netlify provider */
-        // provider:
-        //     process.env.NODE_ENV === 'production'
-        //       ? 'netlify'
-        //       : null /* defaults to ipx or ipxStatic */,
-        placeholder: false, // placeholder image before the actual image is fully loaded.
+        // placeholder: false, // placeholder image before the actual image is fully loaded.
       },
     ),
   }
