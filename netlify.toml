@@ -1,6 +1,6 @@
 [build]
-command = "npm run build"
-publish = "generate"
+command = "npm run generate"
+publish = "dist"
 
 [build.environment]
 NODE_VERSION = "20.14.0"
