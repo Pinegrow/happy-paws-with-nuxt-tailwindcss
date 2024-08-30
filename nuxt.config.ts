@@ -39,6 +39,14 @@ export default defineNuxtConfig({
     componentIslands: true,
   },
 
+  // nitro: {
+  //   preset: 'netlify-static',
+  // },
+
+  build: {
+    transpile: ['shiki'], // Workaround as per https://github.com/nuxt/nuxt/issues/28127
+  },
+
   app: {
     baseURL: '/', // defaulted by nuxt
     // Look into HeadAndMeta.vue for the rest
@@ -57,15 +65,18 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@vee-validate/nuxt',
     '@nuxtjs/seo',
-    '@nuxtjs/fontaine',
+    // '@nuxtjs/fontaine', // blocked by https://github.com/nuxt-modules/fontaine/issues/342
     '@nuxtjs/critters',
-    '@nuxt/icon',
+    // '@nuxt/icon', // Enable once nuxt-icon is removed
+    'nuxt-icon', // To be replaced with @nuxt-icon (above), once NuxtSEO drops using this.
     '@nuxt/eslint',
   ],
+
   // https://dev.to/jacobandrewsky/improving-performance-of-nuxt-with-fontaine-5dim
-  fontMetrics: {
-    fonts: ['Inter', 'Kalam'],
-  },
+  // blocked by https://github.com/nuxt-modules/fontaine/issues/342
+  // fontMetrics: {
+  //   fonts: ['Inter', 'Kalam'],
+  // },
 
   // https://dev.to/jacobandrewsky/optimizing-css-performance-in-nuxt-with-critters-4k8i
   critters: {
@@ -75,6 +86,14 @@ export default defineNuxtConfig({
       preload: 'swap',
     },
   },
+
+  /* Enable once nuxt-icon is removed */
+  // icon: {
+  //   componentName: 'NuxtIcon', // Instead of NuxtIcon, prefer using BaseIcon that uses unocss-icons which is more efficient
+  //   serverBundle: {
+  //     collections: ['vscode-icons', 'logos'],
+  //   },
+  // },
 
   css: [
     '@/assets/css/tailwind.css',
