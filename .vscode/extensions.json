@@ -1,6 +1,8 @@
 {
   "recommendations": [
     "Vue.volar",
+    "sdras.vue-vscode-snippets",
+    "antfu.file-nesting",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "bradlc.vscode-tailwindcss"

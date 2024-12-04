@@ -14,7 +14,7 @@ _pgbackup
 _pginfo
 
 ## optional
-pinegrow.json
+# pinegrow.json
 
 ## optional
 ## Uncomment the below as per your needs

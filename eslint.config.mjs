@@ -26,6 +26,9 @@ export default withNuxt(
       reportUnusedDisableDirectives: 'off',
     },
   },
+  {
+    ignores: ['**/public/'],
+  },
   // {
   //   ...
   // }
