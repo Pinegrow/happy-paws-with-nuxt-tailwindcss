@@ -260,7 +260,7 @@
     }
   },
   "template_framework_id": "vue",
-  "open-pages": [],
+  "open-pages": ["app/components/HeroSection.vue"],
   "breakpoints": ["640px", "768px", "1024px", "1280px", "1536px"],
   "frameworks": [
     "@nuxt/icon",
@@ -290,7 +290,7 @@
     },
     "components/PetCard.vue": { "open-page-views": [{ "w": 1024, "h": 0 }] },
     "app/components/HeroSection.vue": {
-      "open-page-views": [{ "w": 805, "h": 0 }]
+      "open-page-views": [{ "w": 768, "h": 0 }]
     },
     "app/components/BlogPreview.vue": {
       "open-page-views": [{ "w": 1024, "h": 0 }]

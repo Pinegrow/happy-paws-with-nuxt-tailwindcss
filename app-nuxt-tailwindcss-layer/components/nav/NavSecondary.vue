@@ -5,7 +5,7 @@
     navlinks: {
       type: Object,
       default() {
-        return []
+        return {}
       },
     },
     currentPath: {
@@ -14,7 +14,6 @@
     },
   })
 </script>
-
 <template>
   <div>
     <div
@@ -38,5 +37,4 @@
     </div>
   </div>
 </template>
-
 <style scoped></style>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-  const { navlinks, navlinksPrimary, navlinksSecondary, currentPath } = useNav()
+  const { navlinks, navlinksPrimary, navlinksSecondary, currentPath } =
+    useNavMenu()
 </script>
 
 <template>
