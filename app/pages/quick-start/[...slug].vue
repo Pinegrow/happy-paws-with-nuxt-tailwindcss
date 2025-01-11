@@ -7,7 +7,7 @@
     name: 'quick-start',
     // alias: '[...slug]',
     title: 'Quick Start',
-    description: `Start Strong, Start Fast: Your Quick Launch Guide!`,
+    description: 'Start Strong, Start Fast: Your Quick Launch Guide!',
     navOrder: '3',
     type: 'secondary',
     icon: 'i-mdi-home',

@@ -4,7 +4,7 @@
     // name: 'volunteer',
     // alias: 'volunteer',
     title: 'Volunteer',
-    description: `Don't Miss Out – Stay in the Know, Subscribe Today!`,
+    description: "Don't Miss Out – Stay in the Know, Subscribe Today!",
     navOrder: '6',
     type: 'secondary',
     icon: 'i-mdi-home',
