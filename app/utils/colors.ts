@@ -1,22 +1,21 @@
-// Safelisting of color classes for dynamic usage is inpsired by https://ui.nuxt.com/getting-started/theming#colors. The safelisting can be further optimized and automated to extract based on usage at a component level. For details, refer to Smart Safelisting introduced in https://github.com/nuxt/ui/pull/268 & https://github.com/nuxt/ui/blob/dev/src/colors.ts
+// Copied and inspired by @nuxt/ui design - https://github.com/nuxt/ui/blob/main/src/runtime/utils/colors.ts
 
-import colors from 'tailwindcss/colors'
+import { kebabCase, camelCase, upperFirst, omit } from './index'
+import type { Config as TWConfig } from 'tailwindcss'
+import defaultColors from 'tailwindcss/colors.js'
 import { pg_colors } from '../../themes/pg-tailwindcss/tokens.mjs'
+// @ts-ignore
+delete defaultColors.lightBlue
+// @ts-ignore
+delete defaultColors.warmGray
+// @ts-ignore
+delete defaultColors.trueGray
+// @ts-ignore
+delete defaultColors.coolGray
+// @ts-ignore
+delete defaultColors.blueGray
 
-import { omit, kebabCase } from './index'
-
-// @ts-ignore
-delete colors.lightBlue
-// @ts-ignore
-delete colors.warmGray
-// @ts-ignore
-delete colors.trueGray
-// @ts-ignore
-delete colors.coolGray
-// @ts-ignore
-delete colors.blueGray
-
-export const colorsToExclude = [
+const colorsToExclude = [
   'inherit',
   'transparent',
   'current',
@@ -25,98 +24,221 @@ export const colorsToExclude = [
   'slate',
   'gray',
   'zinc',
-  // 'neutral',
+  'neutral',
   'stone',
   'cool',
+  'prime',
 ]
 
-export const excludeColors = (colors: object) =>
-  Object.keys(omit(colors, colorsToExclude)).map((color) =>
-    kebabCase(color),
-  ) as string[]
-
-export const colorsAsRegex = (colors: string[]): string => colors.join('|')
-
-export const hexToRgb = (hex) => {
-  // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
-  const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i
-  hex = hex.replace(shorthandRegex, function (_, r, g, b) {
-    return r + r + g + g + b + b
-  })
-
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
-  return result
-    ? `${parseInt(result[1], 16)} ${parseInt(result[2], 16)} ${parseInt(
-        result[3],
-        16,
-      )}`
-    : null
+const safelistByComponent: Record<
+  string,
+  (colors: string) => TWConfig['safelist']
+> = {
+  button: (colorsAsRegex) => [
+    {
+      pattern: RegExp(`^bg-(${colorsAsRegex})-50$`),
+      variants: ['hover', 'disabled'],
+    },
+    {
+      pattern: RegExp(`^bg-(${colorsAsRegex})-100$`),
+      variants: ['hover'],
+    },
+    {
+      pattern: RegExp(`^bg-(${colorsAsRegex})-400$`),
+      variants: ['dark', 'dark:disabled'],
+    },
+    {
+      pattern: RegExp(`^bg-(${colorsAsRegex})-500$`),
+      variants: ['disabled', 'dark:hover'],
+    },
+    {
+      pattern: RegExp(`^bg-(${colorsAsRegex})-600$`),
+      variants: ['hover'],
+    },
+    {
+      pattern: RegExp(`^bg-(${colorsAsRegex})-900$`),
+      variants: ['dark:hover'],
+    },
+    {
+      pattern: RegExp(`^bg-(${colorsAsRegex})-950$`),
+      variants: ['dark', 'dark:hover', 'dark:disabled'],
+    },
+    {
+      pattern: RegExp(`^text-(${colorsAsRegex})-400$`),
+      variants: ['dark', 'dark:disabled'],
+    },
+    {
+      pattern: RegExp(`^text-(${colorsAsRegex})-500$`),
+      variants: ['dark:hover', 'disabled'],
+    },
+    {
+      pattern: RegExp(`^text-(${colorsAsRegex})-600$`),
+      variants: ['hover'],
+    },
+    {
+      pattern: RegExp(`^outline-(${colorsAsRegex})-400$`),
+      variants: ['dark:focus-visible'],
+    },
+    {
+      pattern: RegExp(`^outline-(${colorsAsRegex})-500$`),
+      variants: ['focus-visible'],
+    },
+    {
+      pattern: RegExp(`^ring-(${colorsAsRegex})-400$`),
+      variants: ['dark:focus-visible'],
+    },
+    {
+      pattern: RegExp(`^ring-(${colorsAsRegex})-500$`),
+      variants: ['focus-visible'],
+    },
+  ],
+  // input: (colorsAsRegex) => [
+  //   {
+  //     pattern: RegExp(`^text-(${colorsAsRegex})-400$`),
+  //     variants: ['dark'],
+  //   },
+  //   {
+  //     pattern: RegExp(`^text-(${colorsAsRegex})-500$`),
+  //   },
+  //   {
+  //     pattern: RegExp(`^ring-(${colorsAsRegex})-400$`),
+  //     variants: ['dark', 'dark:focus'],
+  //   },
+  //   {
+  //     pattern: RegExp(`^ring-(${colorsAsRegex})-500$`),
+  //     variants: ['focus'],
+  //   },
+  // ],
 }
 
-const globalColors = {
-  ...colors,
+const safelistComponentAliasesMap = {
+  // USelect: 'UInput',
+  // //...
+}
+
+const colorsAsRegex = (colors: string[]): string => colors.join('|')
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+type ColorConfig = Exclude<TWConfig['theme']['colors'], Function>
+
+export const excludeColors = (
+  colors: ColorConfig | typeof defaultColors,
+): string[] => {
+  return Object.entries(omit(colors, colorsToExclude))
+    .filter(([, value]) => typeof value === 'object')
+    .map(([key]) => kebabCase(key))
+}
+
+const globalColors: ColorConfig = {
+  ...defaultColors,
   ...pg_colors,
 }
 
-const variantColors = excludeColors(globalColors)
-const safeColorsAsRegex = colorsAsRegex(variantColors)
+const allColors = excludeColors(globalColors)
 
-const safelist = [
-  'bg-gray-400',
-  {
-    pattern: new RegExp(`bg-(${safeColorsAsRegex})-(50|400|500)`),
-  },
-  {
-    pattern: new RegExp(`bg-(${safeColorsAsRegex})-500`),
-    variants: ['disabled'],
-  },
-  {
-    pattern: new RegExp(`bg-(${safeColorsAsRegex})-(400|950)`),
-    variants: ['dark'],
-  },
-  {
-    pattern: new RegExp(`bg-(${safeColorsAsRegex})-(500|900|950)`),
-    variants: ['dark:hover'],
-  },
-  {
-    pattern: new RegExp(`bg-(${safeColorsAsRegex})-400`),
-    variants: ['dark:disabled'],
-  },
-  {
-    pattern: new RegExp(`bg-(${safeColorsAsRegex})-(50|100|600)`),
-    variants: ['hover'],
-  },
-  {
-    pattern: new RegExp(`outline-(${safeColorsAsRegex})-500`),
-    variants: ['focus-visible'],
-  },
-  {
-    pattern: new RegExp(`outline-(${safeColorsAsRegex})-400`),
-    variants: ['dark:focus-visible'],
-  },
-  {
-    pattern: new RegExp(`ring-(${safeColorsAsRegex})-500`),
-    variants: ['focus-visible'],
-  },
-  {
-    pattern: new RegExp(`ring-(${safeColorsAsRegex})-400`),
-    variants: ['dark', 'dark:focus-visible'],
-  },
-  {
-    pattern: new RegExp(`text-(${safeColorsAsRegex})-400`),
-    variants: ['dark'],
-  },
-  {
-    pattern: new RegExp(`text-(${safeColorsAsRegex})-600`),
-    variants: ['hover'],
-  },
-  {
-    pattern: new RegExp(`text-(${safeColorsAsRegex})-500`),
-    variants: ['dark:hover'],
-  },
-]
+export const generateSafelist = (
+  colors: string[] /*, globalColors: string[]*/,
+) => {
+  const baseSafelist = Object.keys(safelistByComponent).flatMap((component) =>
+    safelistByComponent[component](colorsAsRegex(colors)),
+  )
+
+  // Ensure `red` color is safelisted for form elements so that `error` prop of `UFormGroup` always works
+  // const formsSafelist = [
+  //   'input',
+  //   // ...
+  // ].flatMap((component) =>
+  //   safelistByComponent[component](colorsAsRegex(['red'])),
+  // )
+
+  return [
+    ...baseSafelist,
+    // ...formsSafelist,
+    // Ensure all global colors are safelisted for the Notification (toast.add)
+    // ...safelistByComponent['notification'](colorsAsRegex(allColors)),
+    // Gray safelist for Avatar & Notification
+    'bg-gray-500',
+    'dark:bg-gray-400',
+    'text-gray-500',
+    'dark:text-gray-400',
+  ]
+}
+
+type SafelistFn = Exclude<
+  NonNullable<Extract<TWConfig['content'], { extract?: unknown }>['extract']>,
+  Record<string, unknown>
+>
+export const customSafelistExtractor = (
+  prefix: string,
+  content: string,
+  colors: string[],
+  safelistColors: string[],
+): ReturnType<SafelistFn> => {
+  const classes: string[] = []
+  const regex =
+    /<([A-Za-z][A-Za-z0-9]*(?:-[A-Za-z][A-Za-z0-9]*)*)\s+(?![^>]*:color\b)[^>]*\bcolor=["']([^"']+)["'][^>]*>/g
+
+  const matches = content.matchAll(regex)
+
+  const components = Object.keys(safelistByComponent).map(
+    (component) =>
+      `${prefix}${component.charAt(0).toUpperCase() + component.slice(1)}`,
+  )
+
+  for (const match of matches) {
+    const [, component, color] = match
+
+    const camelComponent = upperFirst('-', camelCase(component))
+
+    if (!colors.includes(color) || safelistColors.includes(color)) {
+      continue
+    }
+
+    let name = safelistComponentAliasesMap[camelComponent]
+      ? safelistComponentAliasesMap[camelComponent]
+      : camelComponent
+
+    if (!components.includes(name)) {
+      continue
+    }
+
+    name = name.replace(prefix, '').toLowerCase()
+
+    const matchClasses = safelistByComponent[name](color).flatMap((group) => {
+      return typeof group === 'string'
+        ? ''
+        : ['', ...(group.variants || [])].flatMap((variant) => {
+            const matches = group.pattern.source.match(/\(([^)]+)\)/g)
+
+            return matches
+              .map((match) => {
+                const colorOptions = match
+                  .substring(1, match.length - 1)
+                  .split('|')
+                return colorOptions.map((color) => {
+                  const classesExtracted = group.pattern.source
+                    .replace(match, color)
+                    .replace('^', '')
+                    .replace('$', '')
+                  if (variant) {
+                    return `${variant}:${classesExtracted}`
+                  }
+                  return classesExtracted
+                })
+              })
+              .flat()
+          })
+    })
+
+    classes.push(...matchClasses)
+  }
+
+  return classes
+}
+
+const safelist = generateSafelist(allColors)
 
 const primary = pg_colors.primary?.DEFAULT || pg_colors.primary?.[600]
 const secondary = pg_colors.secondary?.DEFAULT || pg_colors.primary?.[600]
 
-export { safelist, variantColors as colors, primary, secondary }
+export { safelist, allColors as colors, primary, secondary }
