@@ -1,5 +1,6 @@
 <script setup lang="ts">
-  // ...
+  useHeadAndMeta()
+  useOgImage()
 </script>
 
 <template>

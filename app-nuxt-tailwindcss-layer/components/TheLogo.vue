@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import site from '~~/site'
+  import siteMeta from '@/site'
 
-  const { name, logo } = site
+  const { title, logo } = siteMeta
 </script>
 
 <template>
@@ -10,7 +10,7 @@
     <h6
       class="text-primary-600 dark:text-primary-200 font-extrabold font-serif ml-2 mt-4 text-2xl"
     >
-      {{ name }}
+      {{ title }}
     </h6>
   </NuxtLink>
 </template>

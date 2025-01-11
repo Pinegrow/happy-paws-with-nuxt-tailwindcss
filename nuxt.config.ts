@@ -3,9 +3,9 @@ import { resolve } from 'pathe'
 import presetIcons from '@unocss/preset-icons'
 import { bundledLanguages } from 'shiki'
 
-import site from './site'
+import siteMeta from './app/site'
 const {
-  name,
+  title,
   description,
   url,
   defaultLocale,
@@ -13,7 +13,7 @@ const {
   twitter,
   trailingSlash,
   titleSeparator,
-} = site
+} = siteMeta
 
 export default defineNuxtConfig({
   extends: [
@@ -232,7 +232,7 @@ export default defineNuxtConfig({
   // https://nuxtseo.com/nuxt-seo/guides/configuring-modules
   site: {
     url,
-    name,
+    name: title,
     description,
     defaultLocale,
     // https://nuxtseo.com/nuxt-seo/guides/setting-an-identity

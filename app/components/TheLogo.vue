@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import site from '~~/site'
-  const { name, logo } = site
+  import siteMeta from '@/site'
+  const { title, logo } = siteMeta
 </script>
 <template>
   <NuxtLink data-pg-name="Logo" class="flex items-center sm:flex-row" to="/">
@@ -86,7 +86,7 @@
     <h6
       class="text-primary-600 dark:text-primary-200 font-extrabold font-serif ml-2 mt-4 text-2xl"
     >
-      {{ name }}
+      {{ title }}
     </h6>
   </NuxtLink>
 </template>

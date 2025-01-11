@@ -1,8 +1,6 @@
 <script setup lang="ts">
-  const { navlinks, navlinksPrimary, navlinksSecondary, currentPath } =
-    useNavMenu()
+  const { allNavs, navsPrimary, navsSecondary, currentPath } = useNavMenu()
 </script>
-
 <template>
   <div class="w-full">
     <nav class>
@@ -13,7 +11,7 @@
               <TheLogo />
             </div>
             <NavPrimary
-              :navlinks="navlinksPrimary"
+              :navs="navsPrimary"
               :current-path="currentPath"
               class="hidden sm:flex sm:ml-6"
             />
@@ -21,13 +19,14 @@
           <DarkModeSwitch />
           <div class="-mr-2 items-center relative">
             <NavHamburger
-              v-if="navlinksSecondary.length"
+              v-if="navsSecondary?.length"
               class="hidden sm:block"
             />
-            <NavHamburger v-if="navlinks.length" class="sm:hidden" />
+            <NavHamburger v-if="allNavs.length" class="sm:hidden" />
             <NavSecondary
+              v-if="navsSecondary?.length"
               class="hidden sm:flex sm:justify-end absolute right-0 mt-4"
-              :navlinks="navlinksSecondary"
+              :navs="navsSecondary"
               :current-path="currentPath"
             />
           </div>
@@ -35,11 +34,10 @@
       </div>
       <NavSecondary
         class="sm:hidden"
-        :navlinks="navlinks"
+        :navs="allNavs"
         :current-path="currentPath"
       />
     </nav>
   </div>
 </template>
-
 <style scoped></style>

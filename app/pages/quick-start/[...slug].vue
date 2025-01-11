@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import site from '~~/site'
-  const { github } = site
+  import siteMeta from '@/site'
+  const { github } = siteMeta
 
   definePageMeta({
     // layout: 'default',
