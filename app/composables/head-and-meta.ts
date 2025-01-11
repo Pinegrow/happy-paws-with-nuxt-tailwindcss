@@ -49,6 +49,7 @@ export const useHeadAndMeta = () => {
     title: siteTitle,
     description: siteDescription,
     author,
+    twitter,
     titleSeparator,
   } = siteMeta
 
@@ -68,10 +69,10 @@ export const useHeadAndMeta = () => {
   )
 
   useHead({
-    // title, // title is defined statically using definePageMeta in pages and resolved here. For dynamic routes, this resolved title is further overriden within in the dynamic route itself (for eg, [slug]) using a second useHead.
+    title, // title is defined statically using definePageMeta in pages and resolved here. For dynamic routes, this resolved title is further overriden within in the dynamic route itself (for eg, [slug]) using a second useHead.
 
-    // // Other unused params - titleTemplate, templateParams
-    // titleTemplate: null,
+    // Other unused params - titleTemplate, templateParams
+    titleTemplate: null,
 
     // Instead of setting meta via useHead, useServerSeoMeta or @nuxtjs/seo is used.
     // meta: [],
@@ -111,7 +112,7 @@ export const useHeadAndMeta = () => {
     twitterDescription: description,
     // twitterImage: image, // set by @nuxtjs/seo & nuxt-og-image
     twitterImageAlt: title,
-    twitterSite: '@vuedesigner',
+    twitterSite: twitter,
     twitterCreator: '@techakayy',
     // twitterCard: 'summary_large_image', // set by @nuxtjs/seo & nuxt-og-image
   })
