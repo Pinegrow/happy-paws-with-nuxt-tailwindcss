@@ -8,7 +8,7 @@ export const useOgImage = () => {
   const toBg = primary
 
   const ogImageOptions = {
-    component: 'ThePage',
+    component: 'OgCard',
     title,
     // description: '', // use page description instead
     summary: description,
