@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   vueIndentScriptAndStyle: true,
   semi: false,
   singleQuote: true,

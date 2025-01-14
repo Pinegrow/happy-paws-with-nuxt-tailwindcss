@@ -1,7 +1,7 @@
 import type { Pets } from '~~/types/pets'
-import { pets as allPets } from '~~/db.json'
+import { pets } from '~~/db.json'
 
-allPets as Pets
+const allPets: Pets = pets
 
 const fractionOfThePetsArray = (pets, fraction) => {
   return pets

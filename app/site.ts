@@ -9,6 +9,8 @@ export default {
   author: 'Pinegrow',
   url: 'https://happy-paws-with-nuxt-tailwindcss.netlify.app',
   github: 'https://github.com/pinegrow/happy-paws-with-nuxt-tailwindcss',
+  ogImageUrl: 'og-image.jpg', // absolute url (or) from public folder
+  generator: 'https://vuedesigner.com',
   defaultLocale: 'en', // default
   identity: {
     type: 'Organization',
@@ -16,6 +18,7 @@ export default {
   twitter: '@vuedesigner',
   trailingSlash: false, // default
   titleSeparator: '|', // default
+
   navs: {
     primary: [
       {

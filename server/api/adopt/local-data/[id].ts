@@ -1,7 +1,7 @@
 import type { Pet, Pets } from '~~/types/pets'
-import { pets } from '~~/db.json'
+import { pets as allPets } from '~~/db.json'
 
-pets as Pets
+const pets: Pets = allPets
 
 export default defineEventHandler(async (event): Promise<Pet> => {
   const { id } = event.context.params

@@ -1,6 +1,7 @@
 import type { Pet, Pets } from '~~/types/pets'
-import { allPets as pets } from './index'
-pets as Pets
+import { allPets } from './index'
+
+const pets: Pet[] = allPets
 
 const apiBaseUrl =
   'https://my-json-server.typicode.com/pinegrow/happy-paws-with-nuxt-tailwindcss'

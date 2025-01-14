@@ -1,5 +1,4 @@
 /* Pinegrow generated Design Panel Begin */
-/* eslint-disable */
 /* prettier-disable */
 /* @ts-nocheck */
 
