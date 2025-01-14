@@ -40,9 +40,9 @@ export default defineNuxtConfig({
     componentIslands: true,
   },
 
-  // nitro: {
-  //   preset: 'netlify-static',
-  // },
+  nitro: {
+    preset: 'netlify-static',
+  },
 
   build: {
     transpile: ['shiki'], // Workaround as per https://github.com/nuxt/nuxt/issues/28127
