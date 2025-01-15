@@ -230,13 +230,13 @@ export default defineNuxtConfig({
   },
 
   // Used by all modules in the @nuxtjs/seo collection
-  // https://nuxtseo.com/nuxt-seo/guides/configuring-modules
+  // https://nuxtseo.com/docs/nuxt-seo/guides/using-the-modules
   site: {
     url,
     name: title,
     description,
     defaultLocale,
-    // https://nuxtseo.com/nuxt-seo/guides/setting-an-identity
+    // https://nuxtseo.com/docs/schema-org/guides/setup-identity
     identity,
     twitter,
     trailingSlash,
@@ -244,12 +244,12 @@ export default defineNuxtConfig({
   },
 
   robots: {
-    // https://nuxtseo.com/robots/api/config#blocknonseobots
+    // https://nuxtseo.com/docs/robots/api/config#blocknonseobots-boolean
     blockNonSeoBots: true,
   },
 
   sitemap: {
-    // https://nuxtseo.com/sitemap/guides/i18n#debugging-hreflang
+    // https://nuxtseo.com/docs/sitemap/getting-started/troubleshooting
     // Open {{site.url}}/sitemap.xml
     xslColumns: [
       { label: 'URL', width: '50%' },
