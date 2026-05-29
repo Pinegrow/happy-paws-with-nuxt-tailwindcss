@@ -20,7 +20,7 @@
               </h3>
             </NuxtLink>
             <div
-              class="border-t flex items-center justify-between mt-auto p-4 text-xs"
+              class="border-t border-gray-200 dark:border-gray-700 flex items-center justify-between mt-auto p-4 text-xs"
             >
               <div>
                 <div

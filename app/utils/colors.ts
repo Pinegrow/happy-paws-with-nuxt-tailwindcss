@@ -1,19 +1,16 @@
 // Copied and inspired by @nuxt/ui design - https://github.com/nuxt/ui/blob/main/src/runtime/utils/colors.ts
 
 import { kebabCase, camelCase, upperFirst, omit } from './index'
-import type { Config as TWConfig } from 'tailwindcss'
 import defaultColors from 'tailwindcss/colors.js'
 import { pg_colors } from '../../themes/pg-tailwindcss/tokens.mjs'
-// @ts-ignore
-delete defaultColors.lightBlue
-// @ts-ignore
-delete defaultColors.warmGray
-// @ts-ignore
-delete defaultColors.trueGray
-// @ts-ignore
-delete defaultColors.coolGray
-// @ts-ignore
-delete defaultColors.blueGray
+
+const deprecatedDefaultColors = [
+  'lightBlue',
+  'warmGray',
+  'trueGray',
+  'coolGray',
+  'blueGray',
+]
 
 const colorsToExclude = [
   'inherit',
@@ -30,10 +27,11 @@ const colorsToExclude = [
   'prime',
 ]
 
-const safelistByComponent: Record<
-  string,
-  (colors: string) => TWConfig['safelist']
-> = {
+type SafelistEntry = string | { pattern: RegExp; variants?: string[] }
+type Safelist = SafelistEntry[]
+type ColorConfig = Record<string, string | Record<string, string>>
+
+const safelistByComponent: Record<string, (colors: string) => Safelist> = {
   button: (colorsAsRegex) => [
     {
       pattern: RegExp(`^bg-(${colorsAsRegex})-50$`),
@@ -118,8 +116,6 @@ const safelistComponentAliasesMap = {
 
 const colorsAsRegex = (colors: string[]): string => colors.join('|')
 
-type ColorConfig = Exclude<TWConfig['theme']['colors'], () => void>
-
 export const excludeColors = (
   colors: ColorConfig | typeof defaultColors,
 ): string[] => {
@@ -129,7 +125,7 @@ export const excludeColors = (
 }
 
 const globalColors: ColorConfig = {
-  ...defaultColors,
+  ...omit(defaultColors, deprecatedDefaultColors),
   ...pg_colors,
 }
 
@@ -163,16 +159,12 @@ export const generateSafelist = (
   ]
 }
 
-type SafelistFn = Exclude<
-  NonNullable<Extract<TWConfig['content'], { extract?: unknown }>['extract']>,
-  Record<string, unknown>
->
 export const customSafelistExtractor = (
   prefix: string,
   content: string,
   colors: string[],
   safelistColors: string[],
-): ReturnType<SafelistFn> => {
+): string[] => {
   const classes: string[] = []
   const regex =
     /<([A-Za-z][A-Za-z0-9]*(?:-[A-Za-z][A-Za-z0-9]*)*)\s+(?![^>]*:color\b)[^>]*\bcolor=["']([^"']+)["'][^>]*>/g

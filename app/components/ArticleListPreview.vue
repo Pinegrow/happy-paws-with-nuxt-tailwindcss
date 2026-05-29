@@ -27,7 +27,7 @@
 <template>
   <div class="h-full bg-neutral-50 dark:bg-neutral-900 rounded-lg">
     <div
-      class="flex flex-col h-full overflow-hidden rounded-lg shadow surface-container"
+      class="flex flex-col h-full overflow-hidden rounded-lg shadow-sm surface-container"
     >
       <NuxtLink class="-mt-2 -mx-6" :to="articleLink">
         <NuxtImg :alt="article.title" :src="article.social_image" />
@@ -59,7 +59,7 @@
         >
           <BaseButton
             v-if="article.user"
-            class="!bg-transparent flex items-center mr-2 space-x-2"
+            class="bg-transparent! flex items-center mr-2 space-x-2"
             variant="ghost"
             @click="fetchUser(article.user.username)"
           >

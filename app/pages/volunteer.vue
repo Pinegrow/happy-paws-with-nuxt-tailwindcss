@@ -38,7 +38,7 @@
                 <label for="emailfield" class="sr-only">Email address:</label>
                 <input
                   id="emailfield"
-                  class="border-0 flex-1 outline-none px-5 py-2 rounded-3xl w-full"
+                  class="border-0 flex-1 outline-hidden px-5 py-2 rounded-3xl w-full"
                   placeholder="email@example.com"
                   type="email"
                   required

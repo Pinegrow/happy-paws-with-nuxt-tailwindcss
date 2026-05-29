@@ -23,7 +23,7 @@
         :label="nav.title"
         size="lg"
         :variant="nav.to === currentPath ? 'solid' : 'ghost'"
-        class="!rounded-lg"
+        class="rounded-lg!"
       />
     </div>
     <BaseButton

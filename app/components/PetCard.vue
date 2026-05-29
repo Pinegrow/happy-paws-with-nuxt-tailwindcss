@@ -31,7 +31,7 @@
         <BaseIcon
           name="i-ri-heart-add-fill"
           height="20px"
-          class="!text-tertiary-600 md:ml-1.5"
+          class="text-tertiary-600! md:ml-1.5"
         />
       </BaseButton>
     </div>

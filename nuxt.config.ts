@@ -1,6 +1,7 @@
 import { fileURLToPath, URL } from 'node:url'
 import { resolve } from 'pathe'
 import presetIcons from '@unocss/preset-icons'
+import tailwindcss from '@tailwindcss/vite'
 import { bundledLanguages } from 'shiki'
 
 import siteMeta from './app/site'
@@ -101,15 +102,8 @@ export default defineNuxtConfig({
     // 'lite-youtube-embed/src/lite-yt-embed.css',
   ],
 
-  postcss: {
-    plugins: {
-      'tailwindcss/nesting': {},
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
-
   vite: {
+    plugins: [tailwindcss()],
     vue: {
       template: {
         transformAssetUrls: {
@@ -318,11 +312,11 @@ export default defineNuxtConfig({
       iconPreferredCase: 'unocss', // default value (can be removed), Nuxt UI uses the unocss format for icon names
       tailwindcss: {
         /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
-        configPath: 'tailwind.config.ts',
         cssPath: '@/assets/css/tailwind.css',
         // themePath: false, // Set to false so that Design Panel is not used
+        cssTheme: true, // Writes themes/pg-tailwindcss/theme.css for Tailwind CSS v4 @theme tokens
         // restartOnConfigUpdate: true,
-        // restartOnThemeUpdate: true,
+        restartOnThemeUpdate: true,
       },
       // plugins: [
       //   {
