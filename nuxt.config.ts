@@ -312,7 +312,7 @@ export default defineNuxtConfig({
       iconPreferredCase: 'unocss', // default value (can be removed), Nuxt UI uses the unocss format for icon names
       tailwindcss: {
         /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
-        cssPath: '@/assets/css/tailwind.css',
+        cssPath: 'app/assets/css/tailwind.css',
         // themePath: false, // Set to false so that Design Panel is not used
         cssTheme: true, // Writes themes/pg-tailwindcss/theme.css for Tailwind CSS v4 @theme tokens
         // restartOnConfigUpdate: true,

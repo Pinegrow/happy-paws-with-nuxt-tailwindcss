@@ -260,7 +260,10 @@
     }
   },
   "template_framework_id": "vue",
-  "open-pages": ["app/components/HeroSection.vue"],
+  "open-pages": [
+    "app/components/HeroSection.vue",
+    "app/components/CallToAction.vue"
+  ],
   "breakpoints": ["640px", "768px", "1024px", "1280px", "1536px"],
   "frameworks": [
     "@nuxt/icon",
