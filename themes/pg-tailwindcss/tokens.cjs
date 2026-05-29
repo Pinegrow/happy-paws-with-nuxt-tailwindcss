@@ -1,5 +1,4 @@
 /* Pinegrow generated Design Panel Begin */
-/* prettier-disable */
 /* @ts-nocheck */
 
 const pg_colors = {
@@ -218,9 +217,7 @@ const pg_fonts = {
   serif: ["'Sora', sans-serif"],
 }
 
-const pg_font_urls = [
-  'https://fonts.googleapis.com/css?family=Proza+Libre:400,500,600,700,800|Sora:100,200,300,400,500,600,700,800&display=swap',
-]
+const pg_font_urls = [' ']
 
 const pg_backgrounds = {
   'design-image':
